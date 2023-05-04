@@ -2,10 +2,9 @@ package com.example.easyfood.ui.activites
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
@@ -14,9 +13,6 @@ import com.example.easyfood.data.pojo.MealDB
 import com.example.easyfood.data.pojo.MealDetail
 import com.example.easyfood.databinding.ActivityMealDetailesBinding
 import com.example.easyfood.mvvm.DetailsMVVM
-import com.example.easyfood.util.Constants.Companion.MEAL_ID
-import com.example.easyfood.util.Constants.Companion.MEAL_STR
-import com.example.easyfood.util.Constants.Companion.MEAL_THUMB
 import com.google.android.material.snackbar.Snackbar
 
 class MealDetailesActivity : AppCompatActivity() {
@@ -150,8 +146,11 @@ class MealDetailesActivity : AppCompatActivity() {
     private fun getMealInfoFromIntent() {
         val tempIntent = intent
 
+        val MEAL_ID = ""
         this.mealId = tempIntent.getStringExtra(MEAL_ID)!!
+        val MEAL_STR = ""
         this.mealStr = tempIntent.getStringExtra(MEAL_STR)!!
+        val MEAL_THUMB = ""
         this.mealThumb = tempIntent.getStringExtra(MEAL_THUMB)!!
     }
 

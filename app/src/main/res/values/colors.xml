@@ -9,4 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="g_black">#33405f</color>
     <color name="g_loading">#fffafc</color>
+
+    <color name="yellow">#EDD70F</color>
+    <color name="DarkGray">#344e41</color>
+    <color name="OrangeBrown">#bc6c25</color>
+    <color name="LightBrown">#dda15e</color>
+    <color name="Blue">#3a86ff</color>
+    <color name="DarkSky">#006d77</color>
+    <color name="LightSky">#83c5be</color>
+    <color name="DarkBrown">#6c584c</color>
+    <color name="WhiteLight">#f8edeb</color>
+    <color name="LittleOragne">#fec89a</color>
+    <color name="green">#38b000</color>
 </resources>

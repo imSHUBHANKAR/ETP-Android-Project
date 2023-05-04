@@ -10,13 +10,6 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.easyfood.R
 import com.example.easyfood.ui.activites.MealDetailesActivity
-import com.example.easyfood.ui.fragments.HomeFragment
-import com.example.easyfood.util.Constants.Companion.CATEGORY_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_AREA
-import com.example.easyfood.util.Constants.Companion.MEAL_ID
-import com.example.easyfood.util.Constants.Companion.MEAL_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_STR
-import com.example.easyfood.util.Constants.Companion.MEAL_THUMB
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class MealBottomDialog() : BottomSheetDialogFragment() {
@@ -30,10 +23,15 @@ class MealBottomDialog() : BottomSheetDialogFragment() {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL,R.style.AppBottomSheetDialogTheme)
         val b = arguments
+        val MEAL_NAME = null
         mealName = b!!.getString(MEAL_NAME).toString()
+        val MEAL_ID = null
         mealId =b!!.getString(MEAL_ID).toString()
+        val MEAL_THUMB = null
         mealImg =b!!.getString(MEAL_THUMB).toString()
+        val CATEGORY_NAME = null
         mealCategory =b!!.getString(CATEGORY_NAME).toString()
+        val MEAL_AREA = null
         mealCountry =b!!.getString(MEAL_AREA).toString()
     }
 
@@ -53,8 +51,11 @@ class MealBottomDialog() : BottomSheetDialogFragment() {
 
         view.setOnClickListener {
             val intent = Intent(context, MealDetailesActivity::class.java)
+            val MEAL_ID = ""
             intent.putExtra(MEAL_ID,mealId)
+            val MEAL_STR = ""
             intent.putExtra(MEAL_STR,mealName)
+            val MEAL_THUMB = ""
             intent.putExtra(MEAL_THUMB,mealImg)
             startActivity(intent)
         }

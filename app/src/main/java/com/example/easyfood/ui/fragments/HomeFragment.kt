@@ -2,18 +2,16 @@ package com.example.easyfood.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.easyfood.R
 import com.example.easyfood.adapters.CategoriesRecyclerAdapter
@@ -24,15 +22,9 @@ import com.example.easyfood.data.pojo.*
 import com.example.easyfood.databinding.FragmentHomeBinding
 import com.example.easyfood.mvvm.DetailsMVVM
 import com.example.easyfood.mvvm.MainFragMVVM
-import com.example.easyfood.ui.activites.MealActivity
 import com.example.easyfood.ui.MealBottomDialog
+import com.example.easyfood.ui.activites.MealActivity
 import com.example.easyfood.ui.activites.MealDetailesActivity
-import com.example.easyfood.util.Constants.Companion.CATEGORY_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_AREA
-import com.example.easyfood.util.Constants.Companion.MEAL_ID
-import com.example.easyfood.util.Constants.Companion.MEAL_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_STR
-import com.example.easyfood.util.Constants.Companion.MEAL_THUMB
 
 
 class HomeFragment : Fragment() {
@@ -109,8 +101,11 @@ class HomeFragment : Fragment() {
         mostPopularFoodAdapter.setOnClickListener(object : OnItemClick {
             override fun onItemClick(meal: Meal) {
                 val intent = Intent(activity, MealDetailesActivity::class.java)
+                val MEAL_ID = ""
                 intent.putExtra(MEAL_ID, meal.idMeal)
+                val MEAL_STR = ""
                 intent.putExtra(MEAL_STR, meal.strMeal)
+                val MEAL_THUMB = ""
                 intent.putExtra(MEAL_THUMB, meal.strMealThumb)
                 startActivity(intent)
             }
@@ -120,6 +115,7 @@ class HomeFragment : Fragment() {
         myAdapter.onItemClicked(object : CategoriesRecyclerAdapter.OnItemCategoryClicked {
             override fun onClickListener(category: Category) {
                 val intent = Intent(activity, MealActivity::class.java)
+                val CATEGORY_NAME = ""
                 intent.putExtra(CATEGORY_NAME, category.strCategory)
                 startActivity(intent)
             }
@@ -138,10 +134,15 @@ class HomeFragment : Fragment() {
                 override fun onChanged(t: List<MealDetail>?) {
                     val bottomSheetFragment = MealBottomDialog()
                     val b = Bundle()
+                    val CATEGORY_NAME = null
                     b.putString(CATEGORY_NAME, t!![0].strCategory)
+                    val MEAL_AREA = null
                     b.putString(MEAL_AREA, t[0].strArea)
+                    val MEAL_NAME = null
                     b.putString(MEAL_NAME, t[0].strMeal)
+                    val MEAL_THUMB = null
                     b.putString(MEAL_THUMB, t[0].strMealThumb)
+                    val MEAL_ID = null
                     b.putString(MEAL_ID, t[0].idMeal)
 
                     bottomSheetFragment.arguments = b
@@ -163,8 +164,11 @@ class HomeFragment : Fragment() {
         binding.randomMeal.setOnClickListener {
             val temp = meal.meals[0]
             val intent = Intent(activity, MealDetailesActivity::class.java)
+            val MEAL_ID = ""
             intent.putExtra(MEAL_ID, temp.idMeal)
+            val MEAL_STR = ""
             intent.putExtra(MEAL_STR, temp.strMeal)
+            val MEAL_THUMB = ""
             intent.putExtra(MEAL_THUMB, temp.strMealThumb)
             startActivity(intent)
         }

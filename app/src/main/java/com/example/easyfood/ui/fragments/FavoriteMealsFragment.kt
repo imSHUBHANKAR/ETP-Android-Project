@@ -2,10 +2,10 @@ package com.example.easyfood.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -13,18 +13,11 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyfood.R
 import com.example.easyfood.adapters.FavoriteMealsRecyclerAdapter
-import com.example.easyfood.data.pojo.Meal
 import com.example.easyfood.data.pojo.MealDB
 import com.example.easyfood.data.pojo.MealDetail
 import com.example.easyfood.databinding.FragmentFavoriteMealsBinding
 import com.example.easyfood.mvvm.DetailsMVVM
 import com.example.easyfood.ui.activites.MealDetailesActivity
-import com.example.easyfood.util.Constants.Companion.CATEGORY_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_AREA
-import com.example.easyfood.util.Constants.Companion.MEAL_ID
-import com.example.easyfood.util.Constants.Companion.MEAL_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_STR
-import com.example.easyfood.util.Constants.Companion.MEAL_THUMB
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -106,10 +99,15 @@ class FavoriteMeals : Fragment() {
             override fun onChanged(t: List<MealDetail>?) {
                 val bottomDialog = MealBottomDialog()
                 val b = Bundle()
+                val CATEGORY_NAME = null
                 b.putString(CATEGORY_NAME,t!![0].strCategory)
+                val MEAL_AREA = null
                 b.putString(MEAL_AREA,t[0].strArea)
+                val MEAL_NAME = null
                 b.putString(MEAL_NAME,t[0].strMeal)
+                val MEAL_THUMB = null
                 b.putString(MEAL_THUMB,t[0].strMealThumb)
+                val MEAL_ID = null
                 b.putString(MEAL_ID,t[0].idMeal)
                 bottomDialog.arguments = b
                 bottomDialog.show(childFragmentManager,"Favorite bottom dialog")
@@ -128,8 +126,11 @@ class FavoriteMeals : Fragment() {
         myAdapter.setOnFavoriteMealClickListener(object : FavoriteMealsRecyclerAdapter.OnFavoriteClickListener{
             override fun onFavoriteClick(meal: MealDB) {
                 val intent = Intent(context, MealDetailesActivity::class.java)
+                val MEAL_ID = ""
                 intent.putExtra(MEAL_ID,meal.mealId.toString())
+                val MEAL_STR = ""
                 intent.putExtra(MEAL_STR,meal.mealName)
+                val MEAL_THUMB = ""
                 intent.putExtra(MEAL_THUMB,meal.mealThumb)
                 startActivity(intent)
             }

@@ -1,10 +1,10 @@
 package com.example.easyfood.ui.activites
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,10 +15,6 @@ import com.example.easyfood.adapters.SetOnMealClickListener
 import com.example.easyfood.data.pojo.Meal
 import com.example.easyfood.databinding.ActivityCategoriesBinding
 import com.example.easyfood.mvvm.MealActivityMVVM
-import com.example.easyfood.util.Constants.Companion.CATEGORY_NAME
-import com.example.easyfood.util.Constants.Companion.MEAL_ID
-import com.example.easyfood.util.Constants.Companion.MEAL_STR
-import com.example.easyfood.util.Constants.Companion.MEAL_THUMB
 
 class MealActivity : AppCompatActivity() {
     private lateinit var mealActivityMvvm: MealActivityMVVM
@@ -50,8 +46,11 @@ class MealActivity : AppCompatActivity() {
         myAdapter.setOnMealClickListener(object : SetOnMealClickListener {
             override fun setOnClickListener(meal: Meal) {
                 val intent = Intent(applicationContext, MealDetailesActivity::class.java)
+                val MEAL_ID = ""
                 intent.putExtra(MEAL_ID, meal.idMeal)
+                val MEAL_STR = ""
                 intent.putExtra(MEAL_STR, meal.strMeal)
+                val MEAL_THUMB = ""
                 intent.putExtra(MEAL_THUMB, meal.strMealThumb)
                 startActivity(intent)
             }
@@ -73,6 +72,7 @@ class MealActivity : AppCompatActivity() {
 
     private fun getCategory(): String {
         val tempIntent = intent
+        val CATEGORY_NAME = ""
         val x = intent.getStringExtra(CATEGORY_NAME)!!
         categoryNme = x
         return x

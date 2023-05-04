@@ -15,4 +15,13 @@
         android:icon="@drawable/ic_category"
         android:id="@+id/categoryFragment"
         />
+    <item android:title="Notification"
+        android:icon="@drawable/baseline_notifications"
+        android:id="@+id/notifiFragment"
+        />
+    <item android:title="Profile"
+        android:icon="@drawable/baseline_account"
+        android:id="@+id/userFragment"
+        />
+
 </menu>

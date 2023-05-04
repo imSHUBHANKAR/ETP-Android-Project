@@ -2,10 +2,10 @@ package com.example.easyfood.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,7 +15,6 @@ import com.example.easyfood.data.pojo.Category
 import com.example.easyfood.databinding.FragmentCategoryBinding
 import com.example.easyfood.mvvm.CategoryMVVM
 import com.example.easyfood.ui.activites.MealActivity
-import com.example.easyfood.util.Constants.Companion.CATEGORY_NAME
 
 
 class CategoryFragment : Fragment(R.layout.fragment_category) {
@@ -50,6 +49,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
        myAdapter.onItemClicked(object : CategoriesRecyclerAdapter.OnItemCategoryClicked{
            override fun onClickListener(category: Category) {
                val intent = Intent(context, MealActivity::class.java)
+               val CATEGORY_NAME = ""
                intent.putExtra(CATEGORY_NAME,category.strCategory)
                startActivity(intent)
            }

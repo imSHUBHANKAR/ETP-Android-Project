@@ -6,6 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activites.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border1" />
+
     <TextView
         android:id="@+id/tv_fav_empty"
         android:layout_width="wrap_content"
